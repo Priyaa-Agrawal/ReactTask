@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import UserDetail from './component/UserDetail';
+import UserForm  from "./component/UserForm";
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <Router>
+    <div>
+    <Breadcrumb>
+        <BreadcrumbItem >Priya_Agrawal - React_Task </BreadcrumbItem>
+      </Breadcrumb>
+      <Switch>
+        <Route path="/UserDetail">
+          <UserDetail/>
+        </Route>
+        <Route path="/">
+          <UserForm />
+        </Route>
+      </Switch>
     </div>
+  </Router>
   );
 }
 
